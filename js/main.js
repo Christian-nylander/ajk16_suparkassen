@@ -8,6 +8,7 @@ function init() {
 function renderProducts(products) {
 
     console.log(products);
+    $('.product').remove();
 
     products.forEach(function (product) {
         var productElement = createProductElement(product);
@@ -74,3 +75,12 @@ function updateCart() {
     $('#total-price').text(totalPrice + ' SEK');
 }
 
+function handleSearch(event) {
+    event.preventDefault();
+    //get value from input
+    var inputVal = $('#search').val();
+    console.log(inputVal);
+
+    //do ajax with value
+    searchProducts(inputVal);
+}

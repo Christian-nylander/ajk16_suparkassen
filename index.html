@@ -34,12 +34,11 @@
 </div>
 
 
-
 <div class="page">
-    <div class="search-bar">
-        <input class="search-input" type="search" placeholder="SÖK VARA">
+    <form class="search-bar" onsubmit="handleSearch(event);">
+        <input id="search" class="search-input" type="search" placeholder="SÖK VARA">
         <button class="button-search"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
-    </div>
+    </form>
     <div id="products"></div>
 </div>
 

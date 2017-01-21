@@ -10,3 +10,14 @@ function getProducts() {
     }
   });
 }
+
+function searchProducts(query) {
+    $.ajax({
+        type: "GET",
+        url: BASE_URL + "/search?q=" + query,
+        success: renderProducts,
+        error: function (err) {
+            console.error(err.message);
+        }
+    });
+}
