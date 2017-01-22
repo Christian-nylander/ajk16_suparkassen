@@ -4,10 +4,15 @@ function getItemsFromCart() {
 
     $('.cart-item').remove();
 
+
+    var sum = 0;
     cartItems.forEach(function (cartItem) {
         var cartItemElement = renderLocalStorage(cartItem);
         $('#orderContainer').append(cartItemElement);
+        sum += cartItem.quantity * cartItem.price;
     });
+
+    $('#total-sum').text(sum + ':-');
 }
 
 
@@ -15,33 +20,48 @@ function renderLocalStorage(cartItem) {
 
     var itemContainer = $('<div class="cart-item">');
 
-    var itemName = $('<h1>').text(cartItem.name);
-    var itemDesc = $('<p>').text(cartItem.description);
+    var itemName = $('<h1 class="name">').text(cartItem.name);
 
-    var infoContainer = $('<div class="info-container">');
-    var itemAlcohol = $('<div class="label">').text(cartItem.alcohol + '%');
-    var itemPrice = $('<div class="label">').text(cartItem.price + ' SEK');
+    var iconGroup = $('<div class="info-group">');
+    var price = $('<div class="price-icon-container">');
+    var priceIcon = $('<i class="fa fa-tag" aria-hidden="true"></i>');
+    var priceText = $('<span class="label">').text(cartItem.price + ':-');
 
-    var itemQuantity = $('<div class="quantity">').text(cartItem.quantity + ' st');
-    itemQuantity.attr('id', cartItem._id);
+    var procent = $('<div class="procent-icon-container">');
+    var procentIcon = $('<i class="fa fa-glass" aria-hidden="true"></i>');
+    var procentText = $('<span class="label">').text(cartItem.alcohol + '%');
 
-    var itemButton = $('<button>TA BORT</button>').click(function () {
+    price.append(priceIcon, priceText);
+    procent.append(procentIcon, procentText);
+
+    iconGroup.append(itemName, price, procent);
+
+    var buttonDelete = $('<i class="fa fa-trash" aria-hidden="true"></i>').click(function () {
         deleteItemFromCart(cartItem);
     });
 
-    var buttonSubtract = $('<button>minska</button>').click(function () {
+    var buttonSubtract = $('<i class="fa fa-minus" aria-hidden="true"></i>').click(function () {
         subtractQuantity(cartItem);
     });
 
-    var buttonAdd = $('<button>addera</button>').click(function () {
+    var itemQuantity = $('<input type="number" class="quantity">').val(cartItem.quantity);
+    itemQuantity.attr('id', cartItem._id);
+
+    var buttonAdd = $('<i class="fa fa-plus" aria-hidden="true"></i>').click(function () {
         addQuantity(cartItem);
     });
 
-    infoContainer.append(itemPrice, itemAlcohol);
+    var subTotal = $('<div class="sub-total">');
+    var subPrice = $('<div class="price">').text((cartItem.price * cartItem.quantity) + ':-');
+    var subLabel = $('<div class="label">').text('SUMMA');
 
-    var itemType = $('<div>').text(cartItem.type);
+    subTotal.append(subLabel, subPrice);
 
-    return itemContainer.append(itemName, itemDesc, infoContainer, itemType, itemQuantity, itemButton, buttonSubtract, buttonAdd);
+    var cartItemFooter = $('<div class="cart-item-footer">');
+
+    cartItemFooter.append(buttonDelete, buttonSubtract, itemQuantity, buttonAdd, subTotal);
+
+    return itemContainer.append(iconGroup, cartItemFooter);
 
 }
 
@@ -75,7 +95,7 @@ function subtractQuantity(cartItem) {
 
             if (item.quantity > 1) {
                 item.quantity--;
-                $('#' + cartItem._id).text(item.quantity + ' st');
+                $('#' + cartItem._id).val(item.quantity);
 
                 localStorage.setItem('cart', JSON.stringify(cart));
             }
@@ -91,7 +111,7 @@ function addQuantity(cartItem) {
     cart.forEach(function (item) {
         if (item._id === cartItem._id) {
             item.quantity++;
-            $('#' + cartItem._id).text(item.quantity + ' st');
+            $('#' + cartItem._id).val(item.quantity);
 
             localStorage.setItem('cart', JSON.stringify(cart));
         }
