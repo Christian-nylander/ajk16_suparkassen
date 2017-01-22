@@ -3,8 +3,7 @@
 }
 
 .page {
-    position: relative;
-    top: 90px;
+    padding-top: 88px;
 }
 
 #card-container {
