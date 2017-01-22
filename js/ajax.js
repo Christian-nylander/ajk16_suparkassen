@@ -1,4 +1,4 @@
-var BASE_URL = 'http://localhost:3000/api/products';
+var BASE_URL = 'https://suparkassen-api.herokuapp.com/api/products';
 
 function getProducts() {
   $.ajax({
