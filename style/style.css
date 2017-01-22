@@ -59,6 +59,10 @@
         width: 70%;
     }
 
+    .page .total-container {
+        position: fixed;
+        width: 100%;
+    }
 }
 
 @media all and (min-width: 668px) and (max-width: 1110px) {
@@ -127,6 +131,8 @@ button {
 button:focus {
     outline: none;
 }
+
+textarea, input[type="text"], input[type="button"], input[type="submit"] {-webkit-appearance: none; border-radius: 0;}
 
 .procent-icon-container, .price-icon-container {
     display: flex;
