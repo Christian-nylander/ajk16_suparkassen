@@ -53,6 +53,7 @@ function renderLocalStorage(cartItem) {
 
     var subTotal = $('<div class="sub-total">');
     var subPrice = $('<div class="price">').text((cartItem.price * cartItem.quantity) + ':-');
+    subPrice.attr('id', cartItem._id);
     var subLabel = $('<div class="label">').text('SUMMA');
 
     subTotal.append(subLabel, subPrice);
@@ -86,7 +87,7 @@ function deleteItemFromCart(cartItem) {
 }
 
 function subtractQuantity(cartItem) {
-    console.log('ta bort funkar');
+    console.log(cartItem._id);
 
     var cart = getItemFromLocalStorage('cart');
 

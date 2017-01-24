@@ -173,7 +173,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
                                     <strong>Förnamn:</strong>
-                                    <input type="text" name="first_name" class="form-control" value="" />
+                                    <input id="first-name" type="text" name="first_name" class="form-control" value="" />
                                 </div>
                                 <div class="span1"></div>
                                 <div class="col-md-6 col-xs-12">
@@ -205,7 +205,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email Adress:</strong></div>
-                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" required/></div>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+                                    <button type="submit" class="btn btn-primary btn-submit-fix" onclick="handleForm(event);">Place Order</button>
                                 </div>
                             </div>
                         </div>
@@ -301,8 +301,7 @@
             </div>
     </div>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="javascript/js.js"></script>
-<script src="javascript/append.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/pay.js"></script>
 </body>
 </html>

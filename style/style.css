@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
+@media all and (max-width: 840px) {
+    .col-2 #order-form {
+        position: inherit;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .page .layout {
+        display: block;
+        padding: 0 10px;
+    }
+
+    .layout .col-1, .layout .col-2 {
+        width: 100%;
+        padding: 0;
+    }
+}
+
 @media all and (max-width: 666px) {
 
     header #navigation {
@@ -59,10 +77,10 @@
         width: 70%;
     }
 
-    .page .total-container {
-        position: fixed;
-        width: 100%;
-    }
+    /*.page .total-container {*/
+        /*position: fixed;*/
+        /*width: 100%;*/
+    /*}*/
 }
 
 @media all and (min-width: 668px) and (max-width: 1110px) {
@@ -397,36 +415,89 @@ input:focus {
 }
 
 .total-container {
-    bottom: 0;
     display: flex;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 20px 0;
+    background-color: white;
+}
+
+.total-container .label {
+    width: 50%;
+    font-size: 2em;
+    text-align: center;
+    color: #555555;
 }
 
 .total-container #total-sum {
     text-align: center;
     font-size: 2em;
-    background-color: #A09F42;
-    color: white;
-    width: 100%;
-    max-width: 200px;
-    padding: 20px 10px;
+    /*background-color: #A09F42;*/
+    color: #000;
+    font-weight: 900;
+    width: 50%;
 }
 
-.order-btn {
-    display: block;
-    width: 100%;
-    background-color: #383838;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-    line-height: 64px;
-}
 
 #orderContainer {
     max-width: 600px;
     margin: 0 auto;
 }
 
+#order-form {
+    position: fixed;
+    width: 340px;
+    max-width: 600px;
+    text-align: center;
+}
+
+#order-form input {
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dedede;
+}
+
+.btn-group {
+    display: flex;
+    max-height: 64px;
+}
+
+#order-form button {
+    padding: 16px 64px;
+    background-color: #383838;
+    color: white;
+    width: 100%;
+    border: none;
+}
+
+#order-form button.cancel {
+    background-color: #dedede;
+    color: #383838;
+
+}
+
+body.no-scroll {
+    overflow-y: hidden;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.layout {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.col-1 {
+    text-align: center;
+    width: 60%;
+}
+
+.col-2 {
+    width: 40%;
+    padding-left: 20px;
+}
