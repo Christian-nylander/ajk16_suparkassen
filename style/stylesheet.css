@@ -6,6 +6,15 @@
     padding: 88px 0;
 }
 
+#page {
+    /*background-color: #50B1FF;*/
+    text-align: center;
+    padding: 40px 120px;
+}
+
+#page h1 p {
+}
+
 #card-container {
     border: 2px solid black;
 }
@@ -364,11 +373,6 @@ ol, ul {
     color: #888;
 }
 
-/*hr {*/
-    /*margin-bottom: 10px;*/
-    /*margin-top: 10px;*/
-/*}*/
-
 .form-control {
     border-radius: 1px;
 }
@@ -408,4 +412,12 @@ ol, ul {
     margin: 0 auto;
     font-family: "Roboto Slab", sans-serif;
     /*background-color: #357ae8;*/
+}
+
+#successContainer {
+    width: 500px;
+    height: 30px;
+    background-color: green;
+    margin-top: 67px;
+    position: absolute;
 }

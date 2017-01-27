@@ -4,7 +4,6 @@ function getItemsFromCart() {
 
     $('.cart-item').remove();
 
-
     var sum = 0;
     cartItems.forEach(function (cartItem) {
         var cartItemElement = renderLocalStorage(cartItem);
@@ -52,6 +51,7 @@ function renderLocalStorage(cartItem) {
     });
 
     var subTotal = $('<div class="sub-total">');
+    subTotal.attr('id', cartItem._id);
     var subPrice = $('<div class="price">').text((cartItem.price * cartItem.quantity) + ':-');
     var subLabel = $('<div class="label">').text('SUMMA');
 
@@ -92,7 +92,7 @@ function subtractQuantity(cartItem) {
 
     cart.forEach(function (item) {
         if (item._id === cartItem._id) {
-
+            console.log(item._id);
             if (item.quantity > 1) {
                 item.quantity--;
                 $('#' + cartItem._id).val(item.quantity);
@@ -123,3 +123,14 @@ function getItemFromLocalStorage(key) {
 }
 
 getItemsFromCart();
+
+
+function clearCart() {
+    console.log("Hit kommer vi");
+    setTimeout(function(){
+        localStorage.clear();
+        window.location.replace("index.html");
+        alert("Din beställning är bekräftad!")
+    }, 1000);
+}
+

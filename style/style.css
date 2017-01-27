@@ -75,10 +75,9 @@ header .cart .fa.fa-shopping-cart {
     font-size: 2.5em;
 }
 
-#menuIcon{
+#menuIcon {
     display: none;
 }
-
 
 #navigation .nav-link {
     display: inline-block;
@@ -92,8 +91,6 @@ header .cart .fa.fa-shopping-cart {
 .nav-link:hover {
     color: #A09F42;
 }
-
-
 
 body, html {
     margin: 0;
@@ -132,7 +129,10 @@ button:focus {
     outline: none;
 }
 
-textarea, input[type="text"], input[type="button"], input[type="submit"] {-webkit-appearance: none; border-radius: 0;}
+textarea, input[type="text"], input[type="button"], input[type="submit"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
 
 .procent-icon-container, .price-icon-container {
     display: flex;
@@ -430,3 +430,13 @@ input:focus {
     margin: 0 auto;
 }
 
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+}
+
+.info-about {
+    color: #565656;
+}

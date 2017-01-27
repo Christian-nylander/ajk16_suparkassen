@@ -5,153 +5,122 @@
     <title>Suparkassen!</title>
     <link rel="stylesheet" href="style/stylesheet.css">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <script src="https://use.fontawesome.com/3aa540950e.js"></script>
 </head>
 <body>
-    <!--NAVBAR-->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img id="systemLogo" src="system.png"/></a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="index-bootstrap.html">Hem<span class="sr-only">(current)</span></a></li>
-                <li><a href="index.html">Produkter</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inställningar<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input id="product" type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default" onclick="getdata(event)">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href=""><span id="currentMoney">0 kr</span></a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i id="cart" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="orders.html">Din order</a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container wrapper">
-            <div class="row cart-head">
-                <div class="container">
+<form onsubmit="sendData(event)">
+    <div class="container wrapper">
+        <div class="row cart-head">
+            <div class="container">
                 <div class="row">
                     <p></p>
                 </div>
                 <div class="row">
                     <div style="display: table; margin: auto;">
-                        <span class="step step_complete"> <a href="#" class="check-bc">Betala</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+                    <span class="step step_complete"> <a href="orders.html" class="check-bc">Tillbaka</a> <span
+                            class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
                     </div>
                 </div>
                 <div class="row">
                     <p></p>
                 </div>
-                </div>
-            </div>    
-            <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="">
+            </div>
+        </div>
+        <div class="row cart-body">
+            <form class="form-horizontal" method="post" action="">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-                    <!--REVIEW ORDER-->
                     <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Din beställning<div class="pull-right"><small><a class="afix-1" href="#"></a></small></div>
-                        </div>
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Betalning</div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Tuborg</div>
-                                    <div class="col-xs-12"><small>Antal:<span>1</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>25.00</h6>
-                                </div>
-                            </div>
-                            <div class="form-group"><hr /></div>
-                            <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Product name</div>
-                                    <div class="col-xs-12"><small>Quantity:<span>1</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>25.00</h6>
+                                <div class="col-md-12"><strong>Kort</strong></div>
+                                <div class="col-md-12">
+                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group"><hr /></div>
                             <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">Product name</div>
-                                    <div class="col-xs-12"><small>Quantity:<span>2</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>$</span>50.00</h6>
+                                <div class="col-md-12"><strong>Kortnummer:</strong></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_number"
+                                                              value=""/>
                                 </div>
                             </div>
-                            <div class="form-group"><hr /></div>
                             <div class="form-group">
-                                <div class="col-xs-12">
-                                    <strong>Subtotal</strong>
-                                    <div class="pull-right"><span>$</span><span>200.00</span></div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <small>Shipping</small>
-                                    <div class="pull-right"><span>-</span></div>
+                                <div class="col-md-12"><strong>Kort CVV:</strong></div>
+                                <div class="col-md-12"><input type="text" class="form-control" name="car_code"
+                                                              value=""/>
                                 </div>
                             </div>
-                            <div class="form-group"><hr /></div>
                             <div class="form-group">
-                                <div class="col-xs-12">
-                                    <strong>Order Total</strong>
-                                    <div class="pull-right"><span>$</span><span>150.00</span></div>
+                                <div class="col-md-12">
+                                    <strong>Utgångsdatum:</strong>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="">
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="">
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span>Betala säkert med ditt kort.</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--REVIEW ORDER END-->
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
@@ -173,136 +142,60 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
                                     <strong>Förnamn:</strong>
-                                    <input type="text" name="first_name" class="form-control" value="" />
+                                    <input id="firstname" type="text" name="first_name" class="form-control" value=""/>
                                 </div>
                                 <div class="span1"></div>
                                 <div class="col-md-6 col-xs-12">
                                     <strong>Efternamn:</strong>
-                                    <input type="text" name="last_name" class="form-control" value="" />
+                                    <input id="lastname" type="text" name="last_name" class="form-control" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Adress:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="address" class="form-control" value="" />
+                                    <input type="text" name="address" class="form-control" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Stad:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="city" class="form-control" value="" />
+                                    <input type="text" name="city" class="form-control" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Postnummer:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="zip_code" class="form-control" value="" />
+                                    <input type="text" name="zip_code" class="form-control" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Telefon:</strong></div>
-                                <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                                <div class="col-md-12"><input type="text" name="phone_number" class="form-control"
+                                                              value=""/></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email Adress:</strong></div>
-                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                                <div class="col-md-12"><input id="email" type="text" name="email_address"
+                                                              class="form-control"
+                                                              value=""/></div>
                             </div>
+                            <button onclick="clearCart()" type="submit" class="btn btn-primary btn-submit-fix">BESTÄLL
+                            </button>
                         </div>
                     </div>
-                    <!--SHIPPING METHOD END-->
-                    <!--CREDIT CART PAYMENT-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Betalning</div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Kort</strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-                                        <option value="7">American Express</option>
-                                        <option value="8">Discover</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Kortnummer:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Kort CVV:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong>Utgångsdatum:</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Month</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                </select>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Year</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <span>Betala säkert med ditt kort.</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <ul class="cards">
-                                        <li class="visa hand">Visa</li>
-                                        <li class="mastercard hand">MasterCard</li>
-                                        <li class="amex hand">Amex</li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--CREDIT CART PAYMENT END-->
                 </div>
-                
-                </form>
-            </div>
-            <div class="row cart-footer">
-        
-            </div>
-    </div>  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="javascript/js.js"></script>
-<script src="javascript/append.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            </form>
+        </div>
+
+        <div class="row cart-footer"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/getls.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 </body>
 </html>

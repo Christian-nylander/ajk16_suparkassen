@@ -50,3 +50,14 @@ function updateCart() {
   $('#badge').text('x ' + count);
   $('#total-price').text(totalPrice + ' SEK');
 }
+
+function getTotalPriceFromCart() {
+  var cart = JSON.parse(localStorage.getItem('cart'));
+
+  var totalPrice = 0;
+
+  cart.forEach(function (item) {
+    totalPrice += item.quantity * item.price;
+  });
+  return totalPrice;
+}
