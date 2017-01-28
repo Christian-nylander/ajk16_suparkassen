@@ -492,7 +492,6 @@ body.no-scroll {
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
 .info {
     position: absolute;
     bottom: 0;
@@ -502,7 +501,8 @@ body.no-scroll {
 
 .info-about {
     color: #565656;
-=======
+}
+
 .col-1 {
     text-align: center;
     width: 60%;
@@ -511,5 +511,4 @@ body.no-scroll {
 .col-2 {
     width: 40%;
     padding-left: 20px;
->>>>>>> 5f7430e86e86a69cd9b2beea20d345dac0e5ee7a
 }

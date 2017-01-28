@@ -13,13 +13,16 @@ function handleForm(event) {
     items: cart
   };
 
-  $.ajax({
-    url: 'http://localhost:5000/test',
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify(data),
-    success: function(data) {
-      console.log(data);
-    }
-  });
+  console.log(data);
+
+  //
+  // $.ajax({
+  //   url: 'http://localhost:5000/test',
+  //   type: 'POST',
+  //   contentType: 'application/json',
+  //   data: JSON.stringify(data),
+  //   success: function(data) {
+  //     console.log(data);
+  //   }
+  // });
 }
