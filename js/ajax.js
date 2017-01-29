@@ -1,4 +1,4 @@
-var BASE_URL = 'https://suparkassen-api.herokuapp.com/api';
+var BASE_URL = 'http://localhost:3000/api';
 
 function getProducts() {
   $.ajax({
@@ -31,7 +31,6 @@ function sendData(event) {
     var totalPrice = getTotalPriceFromCart();
     var data = { firstname: firstName, lastname: lastName, email: email, totalprice: parseInt(totalPrice) };
 
-    // console.log(data);
     $.ajax({
         type: "POST",
         url: BASE_URL + '/payment',

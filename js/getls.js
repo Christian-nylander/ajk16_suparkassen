@@ -63,9 +63,7 @@ function renderLocalStorage(cartItem) {
     cartItemFooter.append(buttonDelete, buttonSubtract, itemQuantity, buttonAdd, subTotal);
 
     return itemContainer.append(iconGroup, cartItemFooter);
-
 }
-
 
 // remove item from cart
 function deleteItemFromCart(cartItem) {
@@ -85,6 +83,7 @@ function deleteItemFromCart(cartItem) {
 
     getItemsFromCart();
 }
+
 
 function subtractQuantity(cartItem) {
     console.log(cartItem._id);
@@ -131,7 +130,6 @@ function clearCart() {
     setTimeout(function(){
         localStorage.clear();
         window.location.replace("index.html");
-        alert("Din beställning är bekräftad!")
     }, 1000);
 }
 
